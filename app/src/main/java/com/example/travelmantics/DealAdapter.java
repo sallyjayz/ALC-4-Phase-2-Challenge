@@ -112,11 +112,13 @@ class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder> {
 
         @Override
         public void onClick(View v) {
-           int position = getAdapterPosition();
-           HolidayDeal selectedDeal = deals.get(position);
-           Intent intent = new Intent(v.getContext(), AdminActivity.class);
-           intent.putExtra("Deal", selectedDeal);
-           v.getContext().startActivity(intent);
+            if(FirebaseUtil.isAdmin) {
+                int position = getAdapterPosition();
+                HolidayDeal selectedDeal = deals.get(position);
+                Intent intent = new Intent(v.getContext(), AdminActivity.class);
+                intent.putExtra("Deal", selectedDeal);
+                v.getContext().startActivity(intent);
+            }
         }
 
         private void showImage(String url) {

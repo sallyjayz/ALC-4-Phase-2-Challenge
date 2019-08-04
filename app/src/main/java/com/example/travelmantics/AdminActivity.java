@@ -107,13 +107,14 @@ public class AdminActivity extends AppCompatActivity {
             menu.findItem(R.id.save_menu).setVisible(true);
             enabledEditTexts(true);
             findViewById(R.id.selectImgBtn).setEnabled(true);
-        }else {
-            menu.findItem(R.id.delete_menu).setVisible(false);
-            menu.findItem(R.id.save_menu).setVisible(false);
-            enabledEditTexts(false);
-            findViewById(R.id.selectImgBtn).setEnabled(false);
-
         }
+//        else {
+//            menu.findItem(R.id.delete_menu).setVisible(false);
+//            menu.findItem(R.id.save_menu).setVisible(false);
+//            enabledEditTexts(false);
+//            findViewById(R.id.selectImgBtn).setEnabled(false);
+//
+//        }
         return true;
     }
 
