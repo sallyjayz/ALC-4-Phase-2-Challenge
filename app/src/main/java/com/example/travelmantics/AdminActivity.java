@@ -108,13 +108,6 @@ public class AdminActivity extends AppCompatActivity {
             enabledEditTexts(true);
             findViewById(R.id.selectImgBtn).setEnabled(true);
         }
-//        else {
-//            menu.findItem(R.id.delete_menu).setVisible(false);
-//            menu.findItem(R.id.save_menu).setVisible(false);
-//            enabledEditTexts(false);
-//            findViewById(R.id.selectImgBtn).setEnabled(false);
-//
-//        }
         return true;
     }
 
@@ -144,7 +137,7 @@ public class AdminActivity extends AppCompatActivity {
                         deal.setImageName(pictureName);
                         showImage(url);
                     }else{
-                        //Log.d(TAG, "onComplete: Failed to fetch url");
+                        Log.d("Failure Message", "onComplete: Failed to fetch url");
                     }
                 }
             });
@@ -188,12 +181,12 @@ public class AdminActivity extends AppCompatActivity {
             picRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
-                    //Log.d("Delete Image", "Image Deleted");
+                    Log.d("Delete Image", "Image Deleted");
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    //Log.d("Delete Image", e.getMessage());
+                    Log.d("Delete Image", e.getMessage());
                 }
             });
         }

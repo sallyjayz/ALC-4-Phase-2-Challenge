@@ -47,6 +47,17 @@ public class UserActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        showMenu();
+        if(FirebaseUtil.isAdmin) {
+            menu.findItem(R.id.insert_menu).setVisible(true);
+        }else{
+            menu.findItem(R.id.insert_menu).setVisible(false);
+        }
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.insert_menu:
